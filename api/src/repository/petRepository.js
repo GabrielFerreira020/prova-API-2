@@ -18,6 +18,6 @@ export async function consultarPet(){
         from tb_pet;
     `
 
-    const resposta = await req.query(comando);
+    const resposta = await con.query(comando);
     return resposta;
 }

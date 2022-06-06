@@ -19,10 +19,13 @@ server.post('/pet', async (req,resp)=> {
 })
 
 server.get('/pet/consultar' , async (req,resp)=>{
-    try {
-    
+    try{
+        const x = await consultarPet()
+        resp.send(x);
     } catch (err) {
-        
+        resp.status(400).send({
+            erro:err.message
+        })
     }
 })
 
