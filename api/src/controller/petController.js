@@ -1,4 +1,4 @@
-import { pet } from '../repository/petRepository.js';
+import { pet,consultarPet } from '../repository/petRepository.js';
 
 import { Router } from 'express'
 
@@ -10,11 +10,19 @@ server.post('/pet', async (req,resp)=> {
 
         const petAdicionado = await pet(adicionarPet)
 
-        resp.send(petAdicionado)
+        resp.send( adicionarPet)
     } catch (err) {
         resp.status(400).send({
             erro:err.message
         })
+    }
+})
+
+server.get('/pet/consultar' , async (req,resp)=>{
+    try {
+    
+    } catch (err) {
+        
     }
 })
 
