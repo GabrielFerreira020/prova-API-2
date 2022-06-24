@@ -18,7 +18,7 @@ server.post('/pet', async (req,resp)=> {
     }
 })
 
-server.get('/pet/consultar' , async (req,resp)=>{
+server.get('/pet' , async (req,resp)=>{
     try{
         const x = await consultarPet()
         resp.send(x);

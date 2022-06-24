@@ -5,7 +5,7 @@ export async function pet ( pet ){
     `insert into tb_pet(nm_pet)
 	             value(?);
     `
-    const resposta  = await con.query(comando, [pet.nome]);
+    const resposta  = await con.query(comando, [pet.pet]);
     
     return resposta;
 }
@@ -19,5 +19,5 @@ export async function consultarPet(){
     `
 
     const resposta = await con.query(comando);
-    return resposta;
+    return resposta[0];
 }
